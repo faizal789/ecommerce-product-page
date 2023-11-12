@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+   h1{
+    @apply font-bold text-3xl
+   }
+   p {
+    @apply text-text-md text-dark-grayish-blue
+   }
+
+}
+
+body{
+   margin: 0;
+   padding: 0;
+}
