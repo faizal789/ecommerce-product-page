@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import CartContext from "../CartContext";
 
-const Navbar = ({
-  totalPrice,
-  setTotalPrice,
-  setCount,
-  count,
-  removeProduct,
-  setRemoveProduct
-}) => {
+const Navbar = () => {
+  const {
+    totalPrice,
+    setTotalPrice,
+    count,
+    setCount,
+    removeProduct,
+    setRemoveProduct,
+  } = useContext(CartContext);
   const [isOpen, setIsOpen] = React.useState(false);
 
   const [openChart, setOpenChart] = React.useState(false);
@@ -35,11 +37,21 @@ const Navbar = ({
         />
         <h1 className="tracking-tighter">Sneakers</h1>
         <div className="flex gap-7 max-[900px]:hidden">
-          <p className="hover:-mb-1 hover:border-b-4 hover:border-orange py-6 cursor-pointer transition duration-300">Collections</p>
-          <p className="hover:-mb-1 hover:border-b-4 hover:border-orange py-6 cursor-pointer transition duration-300">Men</p>
-          <p className="hover:-mb-1 hover:border-b-4 hover:border-orange py-6 cursor-pointer transition duration-300">Women</p>
-          <p className="hover:-mb-1 hover:border-b-4 hover:border-orange py-6 cursor-pointer transition duration-300">About</p>
-          <p className="hover:-mb-1 hover:border-b-4 hover:border-orange py-6 cursor-pointer transition duration-300">Contact</p>
+          <p className="hover:-mb-1 hover:border-b-4 hover:border-orange py-6 cursor-pointer transition duration-300">
+            Collections
+          </p>
+          <p className="hover:-mb-1 hover:border-b-4 hover:border-orange py-6 cursor-pointer transition duration-300">
+            Men
+          </p>
+          <p className="hover:-mb-1 hover:border-b-4 hover:border-orange py-6 cursor-pointer transition duration-300">
+            Women
+          </p>
+          <p className="hover:-mb-1 hover:border-b-4 hover:border-orange py-6 cursor-pointer transition duration-300">
+            About
+          </p>
+          <p className="hover:-mb-1 hover:border-b-4 hover:border-orange py-6 cursor-pointer transition duration-300">
+            Contact
+          </p>
         </div>
       </div>
       <div className="flex items-center gap-6">
@@ -57,7 +69,7 @@ const Navbar = ({
           alt="profile"
         />
         <div
-        onClick={handleOverlayClick}
+          onClick={handleOverlayClick}
           style={{ display: openChart ? "block" : "" }}
           className="hidden absolute z-0 top-0 left-0 w-full h-full"
         >

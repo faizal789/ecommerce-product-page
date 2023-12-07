@@ -1,4 +1,10 @@
-const Description = ({count,setCount,setTotalPrice,setRemoveProduct}) => {
+import { useContext } from "react";
+import CartContext from "../CartContext";
+
+const Description = () => {
+  const { count, setCount, setTotalPrice, setRemoveProduct } =
+    useContext(CartContext);
+
   const price = 125;
   function add() {
     setCount((prevCount) => prevCount + 1);
